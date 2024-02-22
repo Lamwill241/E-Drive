@@ -35,7 +35,7 @@
         <script>
         var map = L.map('map', {
             zoomControl:true, maxZoom:28, minZoom:1
-        }).fitBounds([[-33.38953715771026,151.39503681731776],[-33.24002538916225,151.55686577845836]]);
+        }).fitBounds([[-33.40546407510011,151.2080545310449],[-33.106790273143716,151.531712453317]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -216,7 +216,6 @@
             style: style_2021DobellAges1420bySuburbs_2_0,
         });
         bounds_group.addLayer(layer_2021DobellAges1420bySuburbs_2);
-        map.addLayer(layer_2021DobellAges1420bySuburbs_2);
             var title = new L.Control();
             title.onAdd = function (map) {
                 this._div = L.DomUtil.create('div', 'info');
@@ -244,19 +243,6 @@
                 }
         });
         setBounds();
-        var i = 0;
-        layer_2021DobellAges1420bySuburbs_2.eachLayer(function(layer) {
-            var context = {
-                feature: layer.feature,
-                variables: {}
-            };
-            layer.bindTooltip((layer.feature.properties['Suburb'] !== null?String('<div style="color: #323232; font-size: 6pt; font-weight: bold; font-family: \'Open Sans\', sans-serif;">' + layer.feature.properties['Suburb']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_2021DobellAges1420bySuburbs_2'});
-            labels.push(layer);
-            totalMarkers += 1;
-              layer.added = true;
-              addLabel(layer, i);
-              i++;
-        });
                 if (map.hasLayer(layer_2021DobellAges1420bySuburbs_2)) {
                     if (map.getZoom() <= 11 && map.getZoom() >= 19) {
                         layer_2021DobellAges1420bySuburbs_2.eachLayer(function (layer) {
